@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handler</title>
+</head>
+<body>
+    <h1 onmousemove="handleHeading()">Exploring Event Handler</h1>
+    <button onclick="handleClick()">Click Me</button>
+    <button id="firstBtn">Click Me-1</button>
+    <button id="secondBtn">Click Me-2</button>
+    <button id="lastBtn">Click Me-3</button>
+
+    <script>
+        function handleClick(){
+            console.log('Someone click me');
+        }
+
+        function handleHeading(){
+            console.log('Someone touch me');
+        }
+
+        function firstClick(){
+            document.body.style.backgroundColor = 'cyan';
+        }
+
+        function secondClick(){
+            document.body.style.color = 'red';
+        }
+
+        const firstBtn = document.getElementById('firstBtn');
+        firstBtn.onclick = firstClick;
+
+        const secondBtn = document.getElementById('secondBtn');
+        secondBtn.addEventListener ('click', secondClick);
+
+        document.getElementById('lastBtn').addEventListener('click', function(){
+            document.body.style.backgroundColor = 'tomato';
+        })
+
+
+    </script>
+</body>
+</html>
