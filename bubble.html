@@ -14,7 +14,7 @@
             <li class="item">Accusantium, eum velit!</li>
             <li class="item">Itaque, laboriosam! Ipsam.</li>
             <li class="item">Debitis, cumque magnam.</li>
-            <li class="item">Quis, laboriosam facere.</li>
+            <li id="last" class="item">Quis, laboriosam facere.</li>
         </ul>
     </div>
 
@@ -22,13 +22,17 @@
         document.getElementById('first').addEventListener('click', function(event){
             console.log('first item clicked');
         })
-
         document.getElementById('container').addEventListener('click', function(event){
             console.log('Container clicked');
         })
         document.getElementById('myList').addEventListener('click', function(event){
-            console.log('Ul item click');
+            console.log('Ul item clicked');
         })
+        document.getElementById('last').addEventListener('click', function(){
+            console.log('Last item clicked ');
+            event.stopPropagation();
+        })
+
     </script>
 </body>
 </html>
