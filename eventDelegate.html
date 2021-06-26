@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <h1>Best Book</h1>
+        <ul id="bookList">
+            <li class="book">Book-1</li>
+            <li class="book">Book-2</li>
+            <li class="book">Book-3</li>
+            <li class="book">Book-4</li>
+            <li class="book">Book-5</li>
+        </ul>
+        <button id="addNew">Add New Book</button>
+    </div>
+    
+    <script>
+
+        let  bookList = document.getElementsByClassName('book');
+        for (let i = 0; i < bookList.length; i++) {
+            const book = bookList[i];
+            book.addEventListener ('click', function(event){
+                console.log(this);
+                console.log(event.target.innerText);
+                console.log(event.target.parentNode);
+                // event.target.parentNode.removeChild (event.target);
+            })
+        }
+
+        document.getElementById ('addNew').addEventListener ('click', function(event){
+            let newBook = document.getElementById ('bookList');
+            let newList = document.createElement ('li');
+            newList.innerText = 'New Book';
+            newBook.appendChild (newList);
+        })
+
+        document.getElementById ('bookList').addEventListener ('click', function(event){
+            event.target.parentNode.removeChild (event.target);
+        })
+
+    </script>
+
+</body>
+</html>
