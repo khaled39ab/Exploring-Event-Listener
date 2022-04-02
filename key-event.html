@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Event</title>
+</head>
+
+<body>
+    <section id="key-section">
+        <h1>Key Event</h1>
+        <p id="guinea-pig">Guinea pig for key event action</p>
+        <input id="input-field" type="text">
+        <button id="delete-btn" disabled>Delete</button>
+    </section>
+
+    <script>
+        // display none 
+        // document.getElementById("delete-btn").addEventListener('click', function(){
+        //     document.getElementById("guinea-pig").style.display ="none";
+        // });
+
+        //remove child 
+        document.getElementById("delete-btn").addEventListener('click', function(){
+            const keySection = document.getElementById("key-section");
+            const guinea = document.getElementById("guinea-pig");
+            keySection.removeChild(guinea);
+            document.getElementById("input-field").value = "";
+        });
+
+        //focus
+        document.getElementById("input-field").addEventListener ("focus", function(){
+            document.body.style.backgroundColor = "lightCoral"
+        });
+
+        //blur
+        document.getElementById("input-field").addEventListener ('blur', function(){
+            document.body.style.backgroundColor = "white"
+        });
+
+        //keydown
+        /* document.getElementById("input-field").addEventListener ('keydown', function(){
+            const inputField = document.getElementById ("input-field").value;
+            console.log(inputField); 
+        }); */
+
+        //keypress
+        /* document.getElementById("input-field").addEventListener ('keypress', function(){
+            const inputField = document.getElementById ("input-field").value;
+            console.log(inputField); 
+        }); */
+
+        //keyup
+        /* document.getElementById("input-field").addEventListener ('keyup', function(){
+            const inputField = document.getElementById ("input-field").value;
+            console.log(inputField); 
+        }); */
+        
+        //change
+        /* document.getElementById("input-field").addEventListener ('change', function(){
+            const inputField = document.getElementById ("input-field").value;
+            console.log(inputField); 
+        }); */
+        
+        //delete confirmation like github
+        document.getElementById("input-field").addEventListener('keyup', function(event){
+            if(event.target.value == "delete"){
+                document.getElementById("delete-btn").removeAttribute ("disabled")
+            }
+            else{
+                document.getElementById("delete-btn").setAttribute ("disabled", true)
+            }
+        })
+        
+
+    </script>
+
+</body>
+
+</html>
