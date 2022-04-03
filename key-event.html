@@ -12,7 +12,7 @@
     <section id="key-section">
         <h1>Key Event</h1>
         <p id="guinea-pig">Guinea pig for key event action</p>
-        <input id="input-field" type="text">
+        <input id="input-field" type="text" placeholder="Press delete for deleting">
         <button id="delete-btn" disabled>Delete</button>
     </section>
 
@@ -23,6 +23,12 @@
         // });
 
         //remove child 
+        /* document.getElementById("delete-btn").addEventListener('click', function(){
+            const keySection = document.getElementById("key-section");
+            const guinea = document.getElementById("guinea-pig");
+            keySection.removeChild(guinea);
+            document.getElementById("input-field").value = "";
+        }); */
         document.getElementById("delete-btn").addEventListener('click', function(){
             const keySection = document.getElementById("key-section");
             const guinea = document.getElementById("guinea-pig");
@@ -72,7 +78,7 @@
             else{
                 document.getElementById("delete-btn").setAttribute ("disabled", true)
             }
-        })
+        });
         
 
     </script>
